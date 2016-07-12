@@ -3,8 +3,8 @@ function D_scale=resizexyz(D,dcminfo)
 x_dis=dcminfo.PixelSpacing(1);
 y_dis=dcminfo.PixelSpacing(2);
 z_dis=dcminfo.SliceThickness;
-xo=dcminfo.Width;
-yo=dcminfo.Height;
+xo=size(D(:,:,1),1);
+yo=size(D(:,:,1),2);
 
 if x_dis~=z_dis || y_dis~=z_dis
     if x_dis==y_dis

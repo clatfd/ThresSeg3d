@@ -1,7 +1,8 @@
 function outtotif(img,foldername)
-    if exist(foldername,'dir')~=7
-        mkdir(foldername);
+    if exist(foldername,'dir')==7
+        rmdir(foldername, 's')
     end
+    mkdir(foldername);
     n=size(img,3);
     for i=1:n    
         imwrite(img(:,:,i), [foldername '/' mat2str(i) '.tif'],'Compression','none');
